@@ -5,6 +5,8 @@ date: "`r Sys.Date()`"
 params:
   pdf_mode:
     value: true
+  english:
+    value: true
 output:
   pagedown::html_resume:
     css: ['dd_cv.css', 'resume']
@@ -48,9 +50,9 @@ Aside
 
 ```{r}
 if(params$pdf_mode){
-  cat("View this CV online with links at _https://www.johannesfeldhege.de/cv/_")
+  cat("View this CV online with links at https://www.johannesfeldhege.de/cv/")
 } else {
-  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://www.johannesfeldhege.de/assets/Johannes_Lebenslauf.pdf)")
+  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://www.johannesfeldhege.de/assets/CV_Johannes_Feldhege.pdf)")
 }
 ```
 
@@ -75,11 +77,21 @@ CV %>% print_skill_bars()
 Disclaimer {#disclaimer}
 --------------------------------------------------------------------------------
 
-Made with the R packages [**pagedown**](https://github.com/rstudio/pagedown) and [[**datadrivencv**](https://github.com/nstrayer/datadrivencv). 
+```{r disclaimer_en, echo = FALSE, results = 'asis', eval = params$english}
+cat("Made with the R packages [**pagedown**](https://github.com/rstudio/pagedown) and [**datadrivencv**](https://github.com/nstrayer/datadrivencv). 
 
-Source code: [github.com/jfeldhege/cv](https://github.com/jfeldhege/cv/).
+Source code: [github.com/jfeldhege/cv](https://github.com/jfeldhege/cv/).\n")
 
-Last updated on `r format(Sys.Date(), "%d.%m.%Y")`.
+cat(glue::glue("Last updated on {format(Sys.Date(), '%d.%m.%Y')}."))
+```
+
+```{r disclaimer_de, echo = FALSE, results = 'asis', eval = !params$english}
+cat("Mit den R Paketen [**pagedown**](https://github.com/rstudio/pagedown) und [**datadrivencv**](https://github.com/nstrayer/datadrivencv) erstellt. 
+
+Quellcode: [github.com/jfeldhege/cv](https://github.com/jfeldhege/cv/).")
+
+cat(glue::glue("<p>Letzte Aktualisierung am {format(Sys.Date(), '%d.%m.%Y')}.</p>"))
+```
 
 
 
@@ -96,14 +108,14 @@ CV %<>% print_text_block("intro")
 
 
 
-Education {data-icon=graduation-cap data-concise=true}
+`r if(params$english){"Education"} else{"Ausbildung"}` {data-icon=graduation-cap data-concise=true}
 --------------------------------------------------------------------------------
 
 ```{r}
 CV %<>% print_section('education')
 ```
 
-Professional Experience {data-icon=suitcase}
+`r if(params$english){"Professional Experience"} else{"Berufliche Erfahrung"}` {data-icon=suitcase}
 --------------------------------------------------------------------------------
 
 ```{r}
@@ -111,7 +123,7 @@ CV %<>% print_section('positions')
 ```
 
 
-Selected Publications {data-icon=book}
+`r if(params$english){"Selected Publications"} else{"Ausgewählte Veröffentlichungen"}` {data-icon=book}
 --------------------------------------------------------------------------------
 
 ```{r}
@@ -119,15 +131,15 @@ CV %<>% print_section('academic_articles')
 ```
 
 
-Conference Posters and Talks {data-icon=chalkboard-teacher}
+`r if(params$english){"Conference Posters and Talks"} else{"Konferenzbeiträge"}`  {data-icon=chalkboard-teacher}
 --------------------------------------------------------------------------------
 
 ```{r}
-CV %<>% print_section('academic_articles')
+CV %<>% print_section('conferences')
 ```
 
 
-Projects {data-icon=laptop}
+`r if(params$english){"Projects"} else{"Projekte"}` {data-icon=laptop}
 --------------------------------------------------------------------------------
 
 ```{r}
@@ -139,5 +151,4 @@ CV %<>% print_section('projects')
 CV %<>% print_links()
 ```
 
-<!-- These breaks just force a new page so section doesnt get cut off -->
 <br>

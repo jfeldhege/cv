@@ -16,7 +16,8 @@
 #' @return A new `CV_Printer` object.
 create_CV_object <-  function(data_location,
                               pdf_mode = FALSE,
-                              sheet_is_publicly_readable = TRUE) {
+                              sheet_is_publicly_readable = TRUE,
+                              english = TRUE) {
 
   cv <- list(
     pdf_mode = pdf_mode,
@@ -51,7 +52,13 @@ create_CV_object <-  function(data_location,
     cv$text_blocks  <- readr::read_csv(paste0(data_location, "text_blocks.csv"), skip = 1)
     cv$contact_info <- readr::read_csv(paste0(data_location, "contact_info.csv"), skip = 1)
   }
-
+  
+  #Filter entries by language
+  if(english) {
+    cv$entries_data <- cv$entries_data %>% filter(english == TRUE)
+  } else {
+    cv$entries_data <- cv$entries_data %>% filter(english == FALSE)
+  }
 
   extract_year <- function(dates){
     date_year <- stringr::str_extract(dates, "(20|19)[0-9]{2}")

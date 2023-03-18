@@ -55,9 +55,9 @@ create_CV_object <-  function(data_location,
   
   #Filter entries by language
   if(english) {
-    cv$entries_data <- cv$entries_data %>% filter(english == TRUE)
+    cv$entries_data <- cv$entries_data %>% dplyr::filter(english == TRUE)
   } else {
-    cv$entries_data <- cv$entries_data %>% filter(english == FALSE)
+    cv$entries_data <- cv$entries_data %>% dplyr::filter(english == FALSE)
   }
 
   extract_year <- function(dates){

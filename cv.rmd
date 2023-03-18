@@ -51,27 +51,41 @@ Aside
 
 ```{r}
 if(params$pdf_mode){
-  cat("View this CV online with links at https://www.johannesfeldhege.de/cv/")
+  if(params$english){
+      cat("View this CV online with links at https://www.johannesfeldhege.de/cv/")
+  } else {
+    cat("Sie finden diesen Lebenslauf online unter https://www.johannesfeldhege.de/cv/")
+  }
 } else {
-  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://www.johannesfeldhege.de/assets/CV_Johannes_Feldhege.pdf)")
+    if(params$english){
+        cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://www.johannesfeldhege.de/assets/CV_Johannes_Feldhege.pdf)")
+    } else{
+      cat("[<i class='fas fa-download'></i> Laden Sie ein pdf des Lebenslauf herunter](https://www.johannesfeldhege.de/assets/CV_Johannes_Feldhege.pdf)")
+    }
 }
 ```
 
-Contact {#contact}
+`r if(params$english){"Contact"} else {"Kontakt"}` {#contact}
 --------------------------------------------------------------------------------
-
 ```{r}
 CV %>% print_contact_info()
 ```
 
 
 
-Language Skills {#skills}
+`r if(params$english){"Programming Skills"} else {"Programmieren"}` {#skills}
 --------------------------------------------------------------------------------
 
 ```{r}
-CV %>% print_skill_bars()
+#CV %>% print_skill_bars()
 ```
+<i class="fab fa-r-project"></i> R 
+<br> <i class="fa fa-area-chart" aria-hidden="true"></i> tidyverse
+<br><i class="fab fa-markdown"></i> RMarkdown / Quarto
+<br> <i class="fas fa-code-branch"></i> Git 
+<br> <i class="fab fa-github"></i> GitHub
+<br><i class="fab fa-html5"></i> HTML
+<br><i class="fa fa-database"></i> SQL
 
 
 

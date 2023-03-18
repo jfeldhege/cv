@@ -1,8 +1,62 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat|Playfair+Display&display=swap");
+@font-face {
+  font-family: 'Cabin';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/cabin-v26-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('fonts/cabin-v26-latin-regular.eot') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/cabin-v26-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/cabin-v26-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('fonts/cabin-v26-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/cabin-v26-latin-regular.svg') format('svg'); /* Legacy iOS */
+}
+
+/* cabin-600 - latin */
+@font-face {
+  font-family: 'Cabin';
+  font-style: normal;
+  font-weight: 600;
+  src: url('fonts/cabin-v26-latin-600.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('fonts/cabin-v26-latin-600.eot') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/cabin-v26-latin-600.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/cabin-v26-latin-600.woff') format('woff'), /* Modern Browsers */
+       url('fonts/cabin-v26-latin-600.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/cabin-v26-latin-600.svg') format('svg'); /* Legacy iOS */
+}
+
+/* cabin-italic - latin */
+@font-face {
+  font-family: 'Cabin';
+  font-style: italic;
+  font-weight: 400;
+  src: url('fonts/cabin-v26-latin-italic.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('fonts/cabin-v26-latin-italic.eot') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/cabin-v26-latin-italic.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/cabin-v26-latin-italic.woff') format('woff'), /* Modern Browsers */
+       url('fonts/cabin-v26-latin-italic.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/cabin-v26-latin-italic.svg') format('svg'); /* Legacy iOS */
+}
+
+/* cabin-600italic - latin */
+@font-face {
+  font-family: 'Cabin';
+  font-style: italic;
+  font-weight: 600;
+  src: url('fonts/cabin-v26-latin-600italic.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('fonts/cabin-v26-latin-600italic.eot') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/cabin-v26-latin-600italic.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/cabin-v26-latin-600italic.woff') format('woff'), /* Modern Browsers */
+       url('fonts/cabin-v26-latin-600italic.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/cabin-v26-latin-600italic.svg') format('svg'); /* Legacy iOS */
+}
+
 
 /* Main text is monserrat*/
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "cabin", sans-serif;
   font-weight: 300;
   line-height: 1.3;
   color: #444;
@@ -12,7 +66,7 @@ body {
 h1,
 h2,
 h3 {
-  font-family: "Playfair Display", serif;
+  font-family: "cabin", serif;
   color: #000;
 }
 

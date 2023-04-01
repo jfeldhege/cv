@@ -55,8 +55,10 @@ create_CV_object <-  function(data_location,
   
   #Filter entries by language
   if(english) {
+    cv$text_blocks <- cv$text_blocks %>% dplyr::filter(english == TRUE)
     cv$entries_data <- cv$entries_data %>% dplyr::filter(english == TRUE)
   } else {
+    cv$text_blocks <- cv$text_blocks %>% dplyr::filter(english == FALSE)
     cv$entries_data <- cv$entries_data %>% dplyr::filter(english == FALSE)
   }
 

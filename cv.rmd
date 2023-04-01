@@ -77,16 +77,8 @@ CV %>% print_contact_info()
 --------------------------------------------------------------------------------
 
 ```{r}
-#CV %>% print_skill_bars()
+CV %>% print_skills()
 ```
-<i class="fab fa-r-project"></i> R 
-<br> <i class="fa fa-area-chart" aria-hidden="true"></i> tidyverse
-<br><i class="fab fa-markdown"></i> RMarkdown / Quarto
-<br> <i class="fas fa-code-branch"></i> Git 
-<br> <i class="fab fa-github"></i> GitHub
-<br><i class="fab fa-html5"></i> HTML
-<br><i class="fa fa-database"></i> SQL
-
 
 
 Disclaimer {#disclaimer}

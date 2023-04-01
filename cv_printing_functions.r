@@ -247,3 +247,15 @@ print_contact_info <- function(cv){
 
   invisible(cv)
 }
+
+print_skills <- function(cv){
+  
+  cv$skills$b <- ifelse(cv$skills$brand == TRUE, "b", "")
+  
+  glue::glue_data(
+    cv$skills,
+    "- <i class='fa{b} fa-{icon}'></i> {skill}"
+  ) %>% print()
+  
+  invisible(cv)
+}

@@ -153,13 +153,6 @@ CV %<>% print_section('academic_articles')
 CV %<>% print_section('conferences')
 ```
 
-`r if(params$english){"Conference Posters and Talks"} else{"Konferenzbeiträge"}`  {data-icon=chalkboard-teacher}
---------------------------------------------------------------------------------
-
-```{r}
-CV %<>% print_section('conferences')
-```
-
 
 
 `r if(params$english){"Projects"} else{"Projekte"}` {data-icon=laptop}
